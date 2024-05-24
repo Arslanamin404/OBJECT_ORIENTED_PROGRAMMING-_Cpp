@@ -79,6 +79,9 @@ int main()
     --d4;
     --d4;
     cout << d4 << endl;
+
+    Distance d6 = d5;
+    cout << "D6: " << d6 << endl;
     return 0;
 }
 
