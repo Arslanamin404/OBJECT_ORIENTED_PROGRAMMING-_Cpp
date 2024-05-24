@@ -21,5 +21,5 @@ Feel free to reach out and discuss OOP concepts! If you have relevant code examp
 ## Contact
 
 - **MOHAMMAD ARSALAN RATHER**
-- **Email:** arslanamin.org@gmail.com
+- **[Email]** (arslanamin.org@gmail.com)
 - **GitHub:** [Arslanamin404](https://github.com/Arslanamin404)
