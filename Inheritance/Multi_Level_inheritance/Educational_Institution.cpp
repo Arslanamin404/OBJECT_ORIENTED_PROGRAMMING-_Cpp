@@ -20,6 +20,7 @@ TODO: Create a class hierarchy for an educational institution.
 #include <string>
 #include <vector>
 #include <conio.h>
+#include <iomanip>
 
 using namespace std;
 
@@ -110,50 +111,52 @@ int main()
         cout << "\nEnter your choice[1/2/3/4/99]: ";
         cin >> choice;
         cin.ignore();
+        cout << endl;
         switch (choice)
         {
         case 1:
             createPerson(person);
-            cout << "PRESS ANY KEY TO CONTINUE. . .";
+            cout << "\nPRESS ANY KEY TO CONTINUE. . .";
             getch();
             break;
         case 2:
             createStudent(students);
-            cout << "PRESS ANY KEY TO CONTINUE. . .";
+            cout << "\nPRESS ANY KEY TO CONTINUE. . .";
             getch();
             break;
         case 3:
             createGraduateStudent(graduate_students);
-            cout << "PRESS ANY KEY TO CONTINUE. . .";
+            cout << "\nPRESS ANY KEY TO CONTINUE. . .";
             getch();
             break;
         case 4:
             display_menu();
             cout << "\nEnter your choice[11/22/33/44]: ";
             cin >> display_menu_choice;
+            cout << endl;
             switch (display_menu_choice)
             {
             case 11:
                 displayPeople(person);
-                cout << "PRESS ANY KEY TO CONTINUE. . .";
+                cout << "\nPRESS ANY KEY TO CONTINUE. . .";
                 getch();
                 break;
             case 22:
                 displayStudents(students);
-                cout << "PRESS ANY KEY TO CONTINUE. . .";
+                cout << "\nPRESS ANY KEY TO CONTINUE. . .";
                 getch();
                 break;
             case 33:
                 displayGraduateStudents(graduate_students);
-                cout << "PRESS ANY KEY TO CONTINUE. . .";
+                cout << "\nPRESS ANY KEY TO CONTINUE. . .";
                 getch();
                 break;
             case 44:
-                cout << "Returning to main menu...";
-                getch();
+                cout << "\n\tReturning to MAIN MENU...";
+                // getch();
                 break;
             default:
-                cout << "INVALID CHOICE! Please enter a valid choice[11/22/33/44]";
+                cout << "\n\n\tINVALID CHOICE...!";
                 getch();
             }
             break;
@@ -164,7 +167,7 @@ int main()
             break;
 
         default:
-            cout << "INVALID CHOICE! Please enter a valid choice[1/2/3/4/99]";
+            cout << "\n\tINVALID CHOICE...!";
             getch();
         }
     } while (choice != 99);
@@ -175,28 +178,39 @@ int main()
 // Function to display the main menu
 void menu()
 {
-    cout << "\t\t\tWELCOME TO THIS EDUCATIONAL INSTITUTION SOFTWARE\n"
+    cout << setw(100) << "WELCOME TO THIS EDUCATIONAL INSTITUTION SOFTWARE\n"
          << endl;
-    cout << "Please Select an Action -->\n"
+    cout << setw(50) << "|--------------------------|" << endl;
+    cout << setw(23) << "|" << setw(18) << "MAIN MENU" << setw(9) << "|" << endl;
+    cout << setw(50) << "|--------------------------|" << endl
          << endl;
-    cout << "\t1. Create a Person" << endl;
-    cout << "\t2. Create a Student" << endl;
-    cout << "\t3. Create a Graduate Student" << endl;
-    cout << "\t4. Display Details" << endl;
-    cout << "\t99. EXIT" << endl;
+
+    cout << "\nPlease Select an Action -->\n"
+         << endl;
+    cout << setw(20) << "- Create a Person" << setw(16) << "[1]" << endl;
+    cout << setw(21) << "- Create a Student" << setw(15) << "[2]" << endl;
+    cout << setw(30) << "- Create a Graduate Student" << setw(6) << "[3]" << endl;
+    cout << setw(20) << "- Display Details" << setw(16) << "[4]" << endl;
+    cout << setw(9) << "- EXIT" << setw(27) << "[99]" << endl;
 }
 
 // Function to display the sub-menu for displaying details
 void display_menu()
 {
-    cout << "\t\t\tWELCOME TO DISPLAY SUB MENU\n"
+    system("cls");
+    cout << setw(100) << "WELCOME TO THIS EDUCATIONAL INSTITUTION SOFTWARE\n"
          << endl;
+    cout << setw(50) << "|--------------------------|" << endl;
+    cout << setw(23) << "|" << setw(18) << "DISPLAY MENU" << setw(9) << "|" << endl;
+    cout << setw(50) << "|--------------------------|" << endl
+         << endl;
+
     cout << "\nPlease Select an Action -->\n"
          << endl;
-    cout << "\t11. DISPLAY Person" << endl;
-    cout << "\t22. DISPLAY Students" << endl;
-    cout << "\t33. DISPLAY Graduate Students" << endl;
-    cout << "\t44. RETURN TO MAIN MENU" << endl;
+    cout << setw(20) << "- DISPLAY Person" << setw(19) << "[11]" << endl;
+    cout << setw(22) << "- DISPLAY Students" << setw(17) << "[22]" << endl;
+    cout << setw(31) << "- DISPLAY Graduate Students" << setw(8) << "[33]" << endl;
+    cout << setw(25) << "- RETURN TO MAIN MENU" << setw(14) << "[44]" << endl;
 }
 
 // Function to create a Person and add to the vector
@@ -210,7 +224,10 @@ void createPerson(vector<Person> &people)
     cin >> age;
     cin.ignore();
     people.push_back(Person(name, age));
-    cout << "\n\tPERSON CREATED SUCCESSFULLY!" << endl;
+    cout << endl;
+    cout << setw(55) << "|-------------------------------------------|" << endl;
+    cout << setw(11) << "|" << setw(36) << "PERSON CREATED SUCCESSFULLY!" << setw(8) << "|" << endl;
+    cout << setw(55) << "|-------------------------------------------|" << endl;
 }
 
 // Function to create a Student and add to the vector
@@ -228,7 +245,10 @@ void createStudent(vector<Student> &students)
     cout << "Major: ";
     getline(cin, major);
     students.push_back(Student(name, age, student_id, major));
-    cout << "\n\tSTUDENT CREATED SUCCESSFULLY!" << endl;
+    cout << endl;
+    cout << setw(55) << "|-------------------------------------------|" << endl;
+    cout << setw(11) << "|" << setw(36) << "STUDENT CREATED SUCCESSFULLY!" << setw(8) << "|" << endl;
+    cout << setw(55) << "|-------------------------------------------|" << endl;
 }
 
 // Function to create a Graduate Student and add to the vector
@@ -250,13 +270,19 @@ void createGraduateStudent(vector<GraduateStudent> &gradStudents)
     cout << "Enter advisor: ";
     getline(cin, advisor);
     gradStudents.push_back(GraduateStudent(name, age, student_id, major, research_topic, advisor));
-    cout << "\n\tGRADUATE STUDENT CREATED SUCCESSFULLY!" << endl;
+    cout << endl;
+    cout << setw(55) << "|--------------------------------------------------|" << endl;
+    cout << setw(4) << "|" << setw(45) << "GRADUATE STUDENT CREATED SUCCESSFULLY!" << setw(6) << "|" << endl;
+    cout << setw(55) << "|--------------------------------------------------|" << endl;
 }
 
 // Function to display all Persons in the vector
 void displayPeople(const vector<Person> &people)
 {
-    cout << "\t\tLIST OF ALL PEOPLE" << endl
+    cout << endl;
+    cout << setw(40) << "|-----------------------------|" << endl;
+    cout << setw(10) << "|" << setw(25) << "LIST OF ALL PEOPLE" << setw(5) << "|" << endl;
+    cout << setw(40) << "|-----------------------------|" << endl
          << endl;
     if (people.empty())
     {
@@ -275,7 +301,10 @@ void displayPeople(const vector<Person> &people)
 // Function to display all students in the vector
 void displayStudents(const vector<Student> &students)
 {
-    cout << "\t\tLIST OF ALL STUDENTS" << endl
+    cout << endl;
+    cout << setw(40) << "|-----------------------------|" << endl;
+    cout << setw(10) << "|" << setw(25) << "LIST OF ALL STUDENTS" << setw(5) << "|" << endl;
+    cout << setw(40) << "|-----------------------------|" << endl
          << endl;
     if (students.empty())
     {
@@ -294,7 +323,10 @@ void displayStudents(const vector<Student> &students)
 // Function to display all Graduate Students in the vector
 void displayGraduateStudents(const vector<GraduateStudent> &gradStudents)
 {
-    cout << "\t\tLIST OF ALL GRADUATE STUDENTS" << endl
+    cout << endl;
+    cout << setw(60) << "|--------------------------------------------------|" << endl;
+    cout << setw(9) << "|" << setw(40) << "LIST OF ALL GRADUATE STUDENTS" << setw(11) << "|" << endl;
+    cout << setw(60) << "|--------------------------------------------------|" << endl
          << endl;
     if (gradStudents.empty())
     {
