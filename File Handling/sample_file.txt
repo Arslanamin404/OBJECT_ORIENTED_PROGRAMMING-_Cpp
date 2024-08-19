@@ -1,3 +1,3 @@
 Heyy! Im the Admin of this file!
 Admin is writing some content to the file
-This content is appended by the ADMIN
+This content is appended to the file by the ADMIN
