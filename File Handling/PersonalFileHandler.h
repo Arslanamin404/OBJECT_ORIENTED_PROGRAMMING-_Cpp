@@ -17,20 +17,20 @@ public:
     FileHandler(const string name) : file_name(name) {}
 
     // function to write data to the file
-    void writeToFile(const string &content);
+    void writeData(const string &content);
 
     // function to append data to the file
-    void appendToFile(const string &content);
+    void appendData(const string &content);
 
     // function to read data from the file
-    void readFromFile();
+    void readData();
 
     // function to copy data from one file to another
     void fileCopy(const string &source_file_name, const string &destination_file_name);
 };
 
 // function to write data to the file
-void FileHandler::writeToFile(const string &content)
+void FileHandler::writeData(const string &content)
 {
     ofstream file(file_name, ios::out);
 
@@ -44,7 +44,7 @@ void FileHandler::writeToFile(const string &content)
 }
 
 // function to append data to the file
-void FileHandler::appendToFile(const string &content)
+void FileHandler::appendData(const string &content)
 {
     ofstream file(file_name, ios::app);
     if (!file)
@@ -57,7 +57,7 @@ void FileHandler::appendToFile(const string &content)
 }
 
 // function to read data from the file
-void FileHandler::readFromFile()
+void FileHandler::readData()
 {
     ifstream file(file_name, ios::in);
     if (!file)

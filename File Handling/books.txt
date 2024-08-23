@@ -1,0 +1,30 @@
+TITLE: To Kill a Mockingbird
+AUTHOR: Harper Lee
+PRICE: $10.99
+ISBN_10: 0060935464
+
+TITLE: 1984
+AUTHOR: George Orwell
+PRICE: $9.99
+ISBN_10: 0451524934
+
+TITLE: The Great Gatsby
+AUTHOR: F. Scott Fitzgerald
+PRICE: $12.99
+ISBN_10: 0743273567
+
+TITLE: Herman Melville
+AUTHOR: Moby Dick
+PRICE: $11.5
+ISBN_10: 1503280780
+
+TITLE: Pride and Prejudice
+AUTHOR: Jane Austen
+PRICE: $8.99
+ISBN_10: 1503290565
+
+TITLE: The Catcher in the Rye
+AUTHOR: J.D. Salinger
+PRICE: $8.99
+ISBN_10: 0316769487
+
